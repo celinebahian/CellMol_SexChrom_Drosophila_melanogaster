@@ -20,15 +20,14 @@
 
 Figure 1.
 
-<img width="740" height="444" alt="image" src="https://github.com/user-attachments/assets/4a4c08c1-4023-4de6-aeb4-8248593e0709" />
-
 
 <img width="959" height="464" alt="image" src="https://github.com/user-attachments/assets/a2f6c7d9-1f54-40ca-8625-2d3c2de9ec99" />
 
 
 <img width="740" height="449" alt="image" src="https://github.com/user-attachments/assets/6ebd0007-cb8f-44f9-8097-8ae47b1e1bd2" />
 
-<img width="737" height="445" alt="image" src="https://github.com/user-attachments/assets/f386e6de-6b10-4750-9cb1-df4699ea1c73" />
+<img width="739" height="442" alt="image" src="https://github.com/user-attachments/assets/a3e2f3ca-b0b1-425a-8a45-307ceadd4530" />
+
 
 <img width="738" height="446" alt="image" src="https://github.com/user-attachments/assets/261bf277-6d04-4c88-85e9-f482bdbf1261" />
 
