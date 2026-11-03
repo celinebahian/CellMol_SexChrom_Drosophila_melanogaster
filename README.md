@@ -20,7 +20,7 @@
 
 <img width="1362" height="640" alt="image" src="https://github.com/user-attachments/assets/09377405-3c64-478c-b8d2-30f52f9070df" />
 
-**Figure 1. Uploading the reference genome assembly files to Galaxy.** Two files associated with the Drosophila melanogaster reference genome assembly (GCF_000001215.4) were added to the upload queue in Galaxy before proceeding with the genomic analysis.
+**Figure 1. Uploading the reference genome assembly files to Galaxy.** Two files associated with the **Drosophila melanogaster* reference genome assembly (GCF_000001215.4) were added to the upload queue in Galaxy before proceeding with the genomic analysis.
 
 <img width="1073" height="630" alt="image" src="https://github.com/user-attachments/assets/711cb65a-59aa-4f70-be0a-ba064404085d" />
 
@@ -38,12 +38,12 @@
 
 <img width="1079" height="634" alt="image" src="https://github.com/user-attachments/assets/558e4cb7-2351-4261-bfd7-318818358ed9" />
 
-**Figure 5. Building the reference genome index using BWA-MEM2.** The Drosophila melanogaster reference genome assembly (GCF_000001215.4) was selected to build an index required for read alignment.
+**Figure 5. Building the reference genome index using BWA-MEM2.** The **Drosophila melanogaster* reference genome assembly (GCF_000001215.4) was selected to build an index required for read alignment.
 
 
 <img width="1142" height="637" alt="image" src="https://github.com/user-attachments/assets/33d55fa3-9a3e-4617-9b0c-67294dad0576" />
 
-**Figure 6. Mapping paired-end reads to the reference genome using BWA-MEM2.** The forward and reverse sequencing reads were aligned against the Drosophila melanogaster reference genome to determine their corresponding genomic positions.
+**Figure 6. Mapping paired-end reads to the reference genome using BWA-MEM2.** The forward and reverse sequencing reads were aligned against the **Drosophila melanogaster* reference genome to determine their corresponding genomic positions.
 
 
 <img width="1135" height="632" alt="image" src="https://github.com/user-attachments/assets/2830e24b-d133-4e6f-b6b5-e5c385459b3f" />
@@ -68,8 +68,8 @@ Five autosomal reference sequences were selected for the autosomal depth calcula
 
 ## Complete Rcode
 
-# Sex-chromosome dosage from whole-genome DNA read depth
-# Input: Samtools coverage TSV + student chromosome labels
+#Sex-chromosome dosage from whole-genome DNA read depth
+#Input: Samtools coverage TSV + student chromosome labels
 cov <- read.delim("chromosome_coverage.tsv", comment.char = "",
                   check.names = FALSE, stringsAsFactors = FALSE)
 names(cov)[1] <- "rname" # Accepts the '#rname' header
@@ -108,12 +108,12 @@ call <- if (ratio >= 0.80) two_copies else if (ratio <= 0.65)
   one_copy else "Ambiguous"
 if (A < 1) call <- "Inconclusive: very low autosomal depth"
 
-# Additional Y or W evidence can support, but not prove, a call
+#Additional Y or W evidence can support, but not prove, a call
 partner <- if (target == "X") "Y" else "W"
 partner_ratio <- if (partner %in% x$group)
   x$relative_depth[x$group == partner][1] else NA_real_
 
-# Export results and a simple, reproducible figure
+#Export results and a simple, reproducible figure
 dir.create("results", showWarnings = FALSE)
 write.csv(x, "results/chromosome_relative_depth.csv", row.names = FALSE)
 png("results/chromosome_depth.png", width = 1000, height = 580)
@@ -148,7 +148,7 @@ cat(paste(summary, collapse = "\n"), "\n")
 
 **1. What species did you choose, and what evidence supports a diploid XX/XY or ZZ/ZW system?**
 
-The selected species is Drosophila melanogaster (fruit fly). It follows an XX/XY sex-chromosome system, where females generally have XX chromosomes and males have XY chromosomes. The X and Y chromosome sequences were included in the analysis to examine their sequencing depth and determine the possible chromosomal sex of the WGS sample.
+The selected species is **Drosophila melanogaster* (fruit fly). It follows an XX/XY sex-chromosome system, where females generally have XX chromosomes and males have XY chromosomes. The X and Y chromosome sequences were included in the analysis to examine their sequencing depth and determine the possible chromosomal sex of the WGS sample.
 
 **2. What are your assembly accession, WGS run, and both BioSample accessions? Are the donors the same?**
 
@@ -181,7 +181,7 @@ Under the ordinary diploid XX/XY system, an X:A ratio near 1.0 generally indicat
 
 **5. Does your result agree with the recorded sex of the WGS donor, if reported? Explain any discrepancy or uncertainty.**
 
-The NCBI BioSample record for the WGS sample (SAMN08511563) identifies the biological material as pooled male and female Drosophila melanogaster. Therefore, the sequencing data do not represent a single individual with one identifiable XX or XY chromosome complement. The observed X:A ratio of 0.799 may reflect the mixture of male and female DNA, along with possible technical factors affecting sequencing coverage and mapping. The low Y:A ratio does not prove that the Y chromosome is absent. Thus, the results cannot be used to confidently determine the chromosomal sex of an individual fly.
+The NCBI BioSample record for the WGS sample (SAMN08511563) identifies the biological material as pooled male and female **Drosophila melanogaster*. Therefore, the sequencing data do not represent a single individual with one identifiable XX or XY chromosome complement. The observed X:A ratio of 0.799 may reflect the mixture of male and female DNA, along with possible technical factors affecting sequencing coverage and mapping. The low Y:A ratio does not prove that the Y chromosome is absent. Thus, the results cannot be used to confidently determine the chromosomal sex of an individual fly.
 
 **6. Why is a chromosome-level assembly alone insufficient for a reliable read-depth sex inference?**
 
@@ -190,6 +190,18 @@ A chromosome-level assembly alone is insufficient because it only provides the r
 ## Limitations
 
 The analysis has several limitations that may affect the results. First, the reference genome assembly (GCF_000001215.4) and WGS run (SRR6702604) have different BioSample accessions, so they cannot be confirmed as originating from the same biological sample. Another important limitation is that the WGS sample consisted of pooled male and female flies rather than one individual. Consequently, the sequencing-depth measurements represent a mixture of DNA from both sexes, making it inappropriate to infer the chromosomal complement of a single individual from the observed X:A ratio. The X:A ratio of 0.799 falls between the expected values for XX and XY individuals, resulting in an ambiguous interpretation. The Y:A ratio of 0.046 also indicates very low Y-chromosome read representation. This may be influenced by repetitive DNA sequences, mapping difficulties, or other sequencing limitations. Therefore, the low Y:A ratio does not automatically indicate the absence of the Y chromosome. Overall, the results should be interpreted with caution because of the pooled sample, differences in BioSample accessions, and possible sequencing and mapping limitations.
+
+## Interpretation of the WGS Chromosome-Depth Analysis
+
+The WGS analysis showed an X:A ratio of 0.799, a Y:A ratio of 0.046, and a median autosomal sequencing depth of 32.289.
+
+In a normal diploid system, the expected X:A ratio is around 1.0 for XX (female) and 0.5 for XY (male). The observed X:A ratio of 0.799 falls between these values. Therefore, the result is considered ambiguous, and the chromosomal complement of the WGS donor cannot be confidently identified as either XX or XY.
+
+The Y:A ratio of 0.046 shows that the sequencing depth of the Y chromosome is very low compared with the autosomes. However, this does not necessarily mean that the Y chromosome is absent. Several factors may have affected the results, such as low sequencing coverage, mapping bias, repetitive DNA sequences, pseudoautosomal regions, and missing or incomplete Y-chromosome sequences in the reference genome. These factors may have influenced the accuracy of chromosome-depth measurements.
+
+**Comparison with BioSample Information:** The reported sex of the WGS BioSample was not available in the results. Therefore, the inferred chromosomal complement cannot yet be compared with the donor's reported sex.
+
+The results show an intermediate X:A ratio and very low Y:A ratio. However, these values are not enough to determine whether the WGS donor has an XX or XY chromosomal complement. Additional BioSample information and consideration of possible sequencing and mapping limitations are needed to make a more reliable interpretation.
 
 ## References
 
