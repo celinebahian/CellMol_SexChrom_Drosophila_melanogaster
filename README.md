@@ -8,13 +8,13 @@
 
 **Study question:** How can sequencing read depth across the autosomes and sex chromosomes be used to infer the possible chromosomal sex of a Drosophila melanogaster WGS sample?
 
-**Assembly accession:** GCF_000001215.4 https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001215.4/
+**Assembly accession:** GCF_000001215.4 (https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001215.4/)
 
-**Assembly BioSample accession:** SAMN02803731 https://www.ncbi.nlm.nih.gov/biosample/SAMN02803731
+**Assembly BioSample accession:** SAMN02803731 (https://www.ncbi.nlm.nih.gov/biosample/SAMN02803731/)
 
-**WGS accession (Run):** SRR6702604 https://www.ncbi.nlm.nih.gov/sra/SRR6702604
+**WGS accession (Run):** SRR6702604 (https://www.ncbi.nlm.nih.gov/sra/?term=SRR6702604)
 
-**WGS BioSample accession:** SAMN08511563 https://www.ncbi.nlm.nih.gov/biosample/SAMN08511563
+**WGS BioSample accession:** SAMN08511563 (https://www.ncbi.nlm.nih.gov/biosample/SAMN08511563)
 
 ## Galaxy Steps
 
@@ -152,7 +152,7 @@ The selected species is **Drosophila melanogaster* (fruit fly). It follows an XX
 
 **2. What are your assembly accession, WGS run, and both BioSample accessions? Are the donors the same?**
 
-The reference genome assembly used was GCF_000001215.4, while the whole-genome sequencing run was SRR6702604. Their corresponding BioSample accessions are SAMN02803731 and SAMN08511563, respectively. These BioSamples have different accession numbers and describe different biological samples. Therefore, it cannot be confirmed that the reference assembly and WGS reads came from the same donor.
+The assembly accession is GCF_000001215.4, and the WGS run accession is SRR6702604. Their corresponding BioSample accessions are SAMN02803731 and SAMN08511563. The BioSample accessions are different, so the samples are separately registered. However, additional BioSample metadata are needed to determine whether they came from the same donor.
 
 **3. Which sequences were used as autosomes and as X or Z? How did you verify their identities?**
 
@@ -215,4 +215,4 @@ The results show an intermediate X:A ratio and very low Y:A ratio. However, thes
 
 5. National Center for Biotechnology Information. (n.d.). Drosophila melanogaster (SAMN08511563) [BioSample]. NCBI BioSample. https://www.ncbi.nlm.nih.gov/biosample/SAMN08511563
 
-7. National Center for Biotechnology Information. (n.d.). *Drosophila melanogaster* (SAMN08511563) [BioSample]. NCBI BioSample. https://www.ncbi.nlm.nih.gov/biosample/SAMN08511563
+6.  National Center for Biotechnology Information. (n.d.). Drosophila melanogaster (SAMN02803731) [BioSample]. NCBI BioSample. https://www.ncbi.nlm.nih.gov/biosample/SAMN02803731/
